@@ -189,6 +189,9 @@ describe('components/AddUsersToTeam', () => {
 
         isSelected = true;
         expect(wrapper.instance().renderOption(option, isSelected, onAdd)).toMatchSnapshot();
+
+        const option_bot = {id: 'id', is_bot: true, last_picture_update: '12345'};
+        expect(wrapper.instance().renderOption(option_bot, isSelected, onAdd)).toMatchSnapshot();
     });
 
     test('should match when renderValue is called', () => {
